@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  user-select: none;
+  font-family: "Space Grotesk", sans-serif;
+  max-width: 1440px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container {
+  height: 900px;
+  display: flex;
+  align-items: center;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.container .background {
+  position: relative;
+  background: url(/images/bg-main-desktop.png) no-repeat;
+  width: 483px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: hsl(0, 0%, 100%);
+}
+
+.container .background .front {
+  background: url(/images/bg-card-front.png) no-repeat;
+  width: 447px;
+  height: 245px;
+  position: absolute;
+  top: 200px;
+  left: 160px;
+  padding: 1.5em 2em;
+}
+
+.background .front .card-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.card-container .card-number {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+
+.background .front .card-container img {
+  width: 85px;
+}
+
+.background .front .card-container .cvv {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.container .background .back {
+  background: url(/images/bg-card-back.png) no-repeat;
+  width: 447px;
+  height: 245px;
+  position: absolute;
+  top: 480px;
+  left: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 55px;
+}
+
+.container .background .back p {
+  margin-top: -6px;
+  letter-spacing: 2px;
+}
+
+.container .form-container,
+.container .thank-you {
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container form {
+  width: 400px;
+  margin-left: 100px;
+}
+
+.name-section,
+.number-section {
+  margin-bottom: 24px;
+}
+
+.name-section,
+.number-section,
+.cvc-section,
+.exp {
+  display: flex;
+  flex-direction: column;
+}
+
+.back-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.exp .mm-yy {
+  display: flex;
+  gap: 10px;
+}
+
+form input,
+.btn {
+  padding: 10px 16px;
+  font-family: inherit;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 1px solid hsl(270, 3%, 87%);
+  margin-bottom: 6px;
+}
+
+form input.error {
+  border: 1px solid hsl(0, 100%, 66%);
+}
+
+form input::placeholder {
+  color: hsl(270, 3%, 87%);
+}
+
+form input:focus {
+  border: 1px solid hsl(278, 94%, 30%);
+  outline: none;
+}
+
+.mm-yy input {
+  width: 80px;
+}
+
+.cvc-section input {
+  width: 200px;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 30px;
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: hsl(278, 68%, 20%);
+}
+
+form label {
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  color: hsl(278, 68%, 11%);
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+form p {
+  color: hsl(0, 100%, 66%);
+  font-size: 12px;
+}
+
+.form-container.hidden,
+.thank-you.hidden {
+  display: none;
+}
+
+.thank-you {
+  flex-direction: column;
+}
+
+.thank-you h2 {
+  font-size: 2em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 16px;
+  font-weight: 100;
+}
+
+.thank-you p {
+  font-size: 18px;
+  color: hsl(279, 6%, 55%);
+}
+
+.thank-you .msg-container {
+  margin-left: 100px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  body {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 375px) {
+  body {
+    max-width: 375px;
+    display: block;
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .container .background {
+    position: relative;
+    background: url(/images/bg-main-mobile.png) no-repeat;
+    width: 100%;
+    color: hsl(0, 0%, 100%);
+  }
+  .container .background .front {
+    position: absolute;
+    top: 90px;
+    left: -60px;
+    padding: 1.5em 2em;
+    transform: scale(0.65);
+    z-index: 1000;
+  }
+  .container .background .back {
+    top: -10px;
+    left: -20px;
+    transform: scale(0.65);
+  }
+  .container .form-container,
+  .container .thank-you {
+    width: 100%;
+  }
+  .container .form-container {
+    transform: scale(0.85);
+  }
+
+  .container .form-container form {
+    width: auto;
+    margin: 0;
+  }
+  .thank-you {
+    transform: scale(0.7);
+    margin: 0;
+  }
+  .thank-you .msg-container {
+    width: 100%;
+    margin: 0;
+    margin-top: -700px;
+  }
+}
